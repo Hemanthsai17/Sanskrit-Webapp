@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labeling App</title>
+</head>
+<body>
+    <h1>Choose a File to Label:</h1>
+    <ul>
+        {% for file_name in file_list %}
+            <li><a href="{{ url_for('label', file_name=file_name) }}">{{ file_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
